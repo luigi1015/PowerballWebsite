@@ -27,4 +27,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	compile("org.springframework.boot:spring-boot-devtools")//Probably want to disable this in production.
 }
