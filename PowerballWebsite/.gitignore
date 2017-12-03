@@ -26,3 +26,4 @@ nbdist/
 
 ### Stuff Jeff Manually Added ###
 *.class
+config.properties
