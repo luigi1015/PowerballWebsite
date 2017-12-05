@@ -3,17 +3,35 @@
 	<head>
 		<title>Getting Started: Serving Web Content</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body>
-		Hello!
+		<h1>Count of Powerball Numbers</h1>
 		<br />
 		<p th:if="${errorMessage != null}" th:text="${errorMessage}">Error Message</p>
+		<br />
 		<table>
+			<tr>
+				<th colspan="2" class="title">White Balls</th>
+			</tr>
 			<tr>
 				<th>Number</th>
 				<th>Count</th>
 			</tr>
-			<tr th:each="row : ${numbers}">
+			<tr th:each="row : ${whiteBallNumbers}">
+				<td th:text="${row.Number}">Number</td>
+				<td th:text="${row.Count}">Count</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th colspan="2" class="title">Powerballs</th>
+			</tr>
+			<tr>
+				<th>Number</th>
+				<th>Count</th>
+			</tr>
+			<tr th:each="row : ${powerballNumbers}">
 				<td th:text="${row.Number}">Number</td>
 				<td th:text="${row.Count}">Count</td>
 			</tr>

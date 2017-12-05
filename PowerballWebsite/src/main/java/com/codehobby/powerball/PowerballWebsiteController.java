@@ -24,15 +24,18 @@ public class PowerballWebsiteController
 	public String root( Model model )
 	{
 		List<Map<String, Object>> whiteballInfo = null;
+		List<Map<String, Object>> powerballInfo = null;
 		try
 		{
 			whiteballInfo = jdbcTemplate.queryForList("CALL GetWhiteBallCounts();");
+			powerballInfo = jdbcTemplate.queryForList("CALL GetPowerballCounts();");
 		} catch( DataAccessException dae ) {
 			model.addAttribute( "errorMessage", "Error getting Powerball data." );
 			LOGGER.error( "Error getting Powerball data: {}", dae.getMessage(), dae );
 		}
 
-		model.addAttribute( "numbers", whiteballInfo );
+		model.addAttribute( "whiteBallNumbers", whiteballInfo );
+		model.addAttribute( "powerballNumbers", powerballInfo );
 		return "root";
 	}
 }
